@@ -173,3 +173,18 @@ p {
 .roll {
     animation: roll 1s;
 }
+.result{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 200;
+    color:gold;
+}
+.error{
+    color:orangered;
+    font-size: 25px;
+    font-weight: 200;
+}
+.notification{
+    color:white
+
+}

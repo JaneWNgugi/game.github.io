@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultElement = document.querySelector('.result');
     const placeBetButton = document.getElementById('placeBet');
     const diceImage = document.getElementById('dice');
-
-    let balance = 100;
+    const inputError = document.querySelector('.inputerror');
+    const numberSelectionError = document.querySelector('.numberselectionerror');
+    let balance = 5000;
     let selectedNumber = null;
 
     numberButtons.forEach(button => {
@@ -21,17 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const betAmount = parseFloat(amountInput.value);
 
         if (!selectedNumber) {
-            alert("Please select a number between 1 and 6.");
+            numberSelectionError.textContent = `Please select a number between 1 and 6.`;
             return;
         }
 
         if (isNaN(betAmount) || betAmount <= 0) {
-            alert("Please enter a valid bet amount.");
+            inputError.textContent = `Please enter a valid bet amount.`;
             return;
         }
 
         if (betAmount > balance) {
-            alert("Insufficient balance!");
+            inputError.textContent = `Insufficient balance!`;
             return;
         }
 
