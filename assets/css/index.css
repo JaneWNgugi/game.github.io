@@ -177,10 +177,10 @@ p {
     text-align: center;
     font-size: 25px;
     font-weight: 200;
-    color:gold;
+    color:orangered;
 }
 .error{
-    color:orangered;
+    color:rgb(255, 0, 0);
     font-size: 25px;
     font-weight: 200;
 }

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         diceImage.classList.add('roll');
         setTimeout(() => {
             const outcome = Math.floor(Math.random() * 6) + 1;
-            diceImage.src = `./assets/img/dice.png`;
+            diceImage.src = `./assets/img/Dice${outcome}.png`;
             diceImage.classList.remove('roll');
 
             if (outcome === selectedNumber) {
