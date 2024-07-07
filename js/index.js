@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const numberButtons = document.querySelectorAll('.number-btn');
     const amountInput = document.getElementById('amount');
     const resultElement = document.querySelector('.result');
-    const placeBetButton = document.getElementById('placeBet');
-    const diceImage = document.getElementById('dice');
     const inputError = document.querySelector('.inputerror');
     const numberSelectionError = document.querySelector('.numberselectionerror');
+    const placeBetButton = document.getElementById('placeBet');
+    const dice = document.getElementById('dice');
+
     let balance = 5000;
     let selectedNumber = null;
-
     numberButtons.forEach(button => {
         button.addEventListener('click', () => {
             numberButtons.forEach(btn => btn.classList.remove('selected'));
@@ -37,24 +37,38 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Animate the dice roll
-        diceImage.classList.add('roll');
-        setTimeout(() => {
-            const outcome = Math.floor(Math.random() * 6) + 1;
-            diceImage.src = `./assets/img/Dice${outcome}.png`;
-            diceImage.classList.remove('roll');
+        dice.style.transition = 'transform 3s';
+        const outcome = Math.floor(Math.random() * 6) + 1;
 
+        const additionalRotationX = Math.floor(Math.random() * 4) * 360;
+        const additionalRotationY = Math.floor(Math.random() * 4) * 360;
+
+        let rotateX, rotateY;
+        switch (outcome) {
+            case 1: rotateX = 0; rotateY = 0; break;
+            case 2: rotateX = -90; rotateY = 0; break;
+            case 3: rotateX = 0; rotateY = -90; break;
+            case 4: rotateX = 0; rotateY = 90; break;
+            case 5: rotateX = 90; rotateY = 0; break;
+            case 6: rotateX = 0; rotateY = 180; break;
+        }
+        dice.style.transform = `rotateX(${rotateX + additionalRotationX}deg) rotateY(${rotateY + additionalRotationY}deg)`;
+
+        setTimeout(() => {
+            numberSelectionError.classList.remove();
+            inputError.classList.remove();
             if (outcome === selectedNumber) {
-                balance += betAmount * 5; // 5:1 payout for correct guess
-                resultElement.textContent = `You won! The dice showed ${outcome}.`;
+                balance += betAmount * 2; // 5:1 payout for correct guess
+                resultElement.textContent = `You won! Dice showed ${outcome}.`;
             } else {
                 balance -= betAmount;
-                resultElement.textContent = `You lost! The dice showed ${outcome}.`;
+                resultElement.textContent = `Dice showed ${outcome}.`;
             }
 
             balanceElement.textContent = `Balance: $${balance}`;
             amountInput.value = '';
             numberButtons.forEach(btn => btn.classList.remove('selected'));
             selectedNumber = null;
-        }, 1000); // Duration of the roll animation
+        }, 3000); // Duration of the roll animation
     });
 });
