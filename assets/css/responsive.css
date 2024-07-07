@@ -31,13 +31,13 @@ body {
 /* Small devices (360px to 479px) */
 @media (min-width: 360px) and (max-width: 479px) {
     .cube {
-        width: 18vmin;
-        height: 18vmin;
+        width: 30vmin;
+        height: 30vmin;
     }
 
     .face {
-        width: 18vmin;
-        height: 18vmin;
+        width:30vmin;
+        height: 30vmin;
     }
 }
 
