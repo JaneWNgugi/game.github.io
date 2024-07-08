@@ -51,24 +51,24 @@ input, button {
 #number1 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
-    background-color: #021325;
+    background-color: #043b77;
     color: white;
     font-size: 16px;
 }
 
 #number1.selected {
-    background-color: #000000;
+    background-color: #03e6da;
 }
 #number1:hover {
-    background-color: #b30000;
+    background-color: #3fe2e7;
 }
 #number2 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
     background-color: #ff00c8;
@@ -77,15 +77,15 @@ input, button {
 }
 
 #number2.selected {
-    background-color: #011a35;
+    background-color: #03e6da;
 }
 #number2:hover {
-    background-color: #b30000;
+    background-color: #3fe2e7;
 }
 #number3 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
     background-color: #ff7b00;
@@ -94,15 +94,15 @@ input, button {
 }
 
 #number3.selected {
-    background-color: #011a35;
+    background-color: #03e6da;
 }
 #number3:hover {
-    background-color: #b30000;
+    background-color: #3fe2e7;
 }
 #number4 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
     background-color: #0059ff;
@@ -111,15 +111,15 @@ input, button {
 }
 
 #number4.selected {
-    background-color: #011a35;
+    background-color: #03e6da;
 }
 #number4:hover {
-    background-color: #b30000;
+    background-color: #3fe2e7;
 }
 #number5 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
     background-color: #1e7404;
@@ -128,15 +128,15 @@ input, button {
 }
 
 #number5.selected {
-    background-color: #011a35;
+    background-color: #03e6da;
 }
 #number5:hover {
-    background-color: #b30000;
+    background-color: #3fe2e7;
 }
 #number6 {
     width: 40px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f0404;
     border-radius: 20px;
     cursor: pointer;
     background-color: #ff000d;
@@ -145,11 +145,10 @@ input, button {
 }
 
 #number6.selected {
-    background-color: #011a35;
+    background-color: #03e6da;
 }
 #number6:hover {
-    background-color: #b30000;
-}
+    background-color: #3fe2e7;}
 
 
 p {
