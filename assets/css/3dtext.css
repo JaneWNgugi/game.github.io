@@ -1,0 +1,50 @@
+.tutorial {
+    display: flex;
+    justify-content: center;
+ }
+
+ .tutorial .inner {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: verdana;
+    white-space: nowrap;
+    overflow: hidden;
+  
+ }
+
+ .tutorial .inner:first-child {
+    background-color: #190379;
+    color: gold;
+    transform-origin: right;
+    transform: perspective(110px) rotateY(-16deg);
+ }
+
+ .tutorial .inner:last-child {
+    background-color: gold;
+    color: #190379;
+    transform-origin: left;
+    transform: perspective(50px) rotateY(16deg);
+ }
+
+ .tutorial .inner span {
+    position: absolute;
+    animation: marquee 5s linear infinite;
+ }
+
+ .tutorial .inner:first-child span {
+    animation-delay: 1.5s;
+    left: -100%;
+ }
+
+ @keyframes marquee {
+    from {
+       left: 100%;
+    }
+
+    to {
+       left: -100%;
+    }
+ }

@@ -5,6 +5,7 @@
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg);
     transition: transform 3s;
+    display:none;
 }
 
 .face {
@@ -31,7 +32,7 @@
 .bottom { transform: rotateX(-90deg) translateZ(10vmin); }
 
 .dice-container {
-    padding: 30px;
+    padding: 1px;
     display: flex;
     align-items: center;
     justify-content: center;

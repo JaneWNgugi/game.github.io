@@ -1,49 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dice Roll</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/cube.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/cube.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets/css/minusplusbtns.css" />
+    <link rel="stylesheet" href="./assets/css/3dtext.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="topdata">
-            <h1>Dice Roll</h1>
-            <p class="balance">Balance: Ksh5000</p>
+ 
+      <div class="tutorial">
+        <div class="inner">
+           <span>DICE</span>
+        </div>
+        <div class="inner">
+           <span>ROLL</span>
+        </div>
+     </div>
+      
+      <p class="balance">Balance: Ksh5000</p>
+
+      <label>Select Number of Dices to Roll:</label>
+      <div class="diceselect">
+        <!-- Container to display the number of dice selected -->
+        <div class="dice-display">
+          <button
+            id="minus-dice"
+            class="number-btn success2"
+            data-action="decrease"
+          >
+            <img
+              id="down-icon"
+              src="./Assets/img/icons/down-arrow.png"
+              alt="down"
+            />
+          </button>
+          <span id="current-dice-count">Roll Dice</span>
+          <!-- Display number of dice selected -->
+          <button
+            id="plus-dice"
+            class="number-btn success2"
+            data-action="increase">
+            <img id="up-icon" src="./Assets/img/icons/up-arrow.png" alt="up" />
+          </button>
         </div>
 
-        <label>Select Number (1-6):</label>
-        <div id="number" class="button-group">
-            <button id="number1" class="number-btn" data-number="1">1</button>
-            <button id="number2" class="number-btn" data-number="2">2</button>
-            <button id="number3" class="number-btn" data-number="3">3</button>
-            <button id="number4" class="number-btn" data-number="4">4</button>
-            <button id="number5" class="number-btn" data-number="5">5</button>
-            <button id="number6" class="number-btn" data-number="6">6</button>
-        </div>
-        <p class="numberselectionerror error"></p>
+        <p class="diceselectionerrors error"></p>
 
-        <div>
-            <label for="amount">Bet Amount:</label>
-            <input type="number" id="amount" placeholder="Enter bet amount">
-            <p class="inputerror error"></p>
-        </div>
-        <button id="placeBet">Place Bet</button>
-<p class="result"></p>
         <div class="dice-container">
-            <div class="cube" id="dice">
-                <div class="face front"><img src="./assets/img/Dice1.png" alt="1"></div>
-                <div class="face back"><img src="./assets/img/Dice6.png" alt="6"></div>
-                <div class="face right"><img src="./assets/img/Dice3.png" alt="3"></div>
-                <div class="face left"><img src="./assets/img/Dice4.png" alt="4"></div>
-                <div class="face top"><img src="./assets/img/Dice5.png" alt="5"></div>
-                <div class="face bottom"><img src="./assets/img/Dice2.png" alt="2"></div>
+          <div class="cube" id="dice1">
+            <div class="face front">
+              <img src="./assets/img/Dice1.png" alt="1" />
             </div>
+            <div class="face back">
+              <img src="./assets/img/Dice6.png" alt="6" />
+            </div>
+            <div class="face right">
+              <img src="./assets/img/Dice3.png" alt="3" />
+            </div>
+            <div class="face left">
+              <img src="./assets/img/Dice4.png" alt="4" />
+            </div>
+            <div class="face bottom">
+              <img src="./assets/img/Dice5.png" alt="5" />
+            </div>
+            <div class="face top">
+              <img src="./assets/img/Dice2.png" alt="2" />
+            </div>
+          </div>
+          <div class="cube" id="dice2">
+            <div class="face front">
+              <img src="./assets/img/Dice1.png" alt="1" />
+            </div>
+            <div class="face back">
+              <img src="./assets/img/Dice6.png" alt="6" />
+            </div>
+            <div class="face right">
+              <img src="./assets/img/Dice3.png" alt="3" />
+            </div>
+            <div class="face left">
+              <img src="./assets/img/Dice4.png" alt="4" />
+            </div>
+            <div class="face bottom">
+              <img src="./assets/img/Dice5.png" alt="5" />
+            </div>
+            <div class="face top">
+              <img src="./assets/img/Dice2.png" alt="2" />
+            </div>
+          </div>
+          <div class="cube" id="dice3">
+            <div class="face front">
+              <img src="./assets/img/Dice1.png" alt="1" />
+            </div>
+            <div class="face back">
+              <img src="./assets/img/Dice6.png" alt="6" />
+            </div>
+            <div class="face right">
+              <img src="./assets/img/Dice3.png" alt="3" />
+            </div>
+            <div class="face left">
+              <img src="./assets/img/Dice4.png" alt="4" />
+            </div>
+            <div class="face bottom">
+              <img src="./assets/img/Dice5.png" alt="5" />
+            </div>
+            <div class="face top">
+              <img src="./assets/img/Dice2.png" alt="2" />
+            </div>
+          </div>
+          <div class="dicepredictionselection">
+            <div class="dice1selection">
+              <label>Select (1 to 6):</label>
+              <div id="number-dice1" class="button-group">
+                <button
+                  id="minus-dice1"
+                  class="number-btn-dice1 success2"
+                  data-action="decrease"
+                >
+                <img id="down-c-icon" src="./Assets/img/icons/circle-down.png" alt="down" />
+                </button>
+                <span id="current-number-dice1">1</span>
+                <button
+                  id="plus-dice1"
+                  class="number-btn-dice1 success2"
+                  data-action="increase"
+                >
+                <img id="up-c-icon" src="./Assets/img/icons/circle-up.png" alt="up" />
+                </button>
+              </div>
+              <label>Dice 1 :</label>
+              <p class="numberselectionerror1 error"></p>
+            </div>
+
+            <div class="dice2selection">
+              <label>Select (1 to 6):</label>
+              <div id="number-dice2" class="button-group">
+                <button
+                  id="minus-dice2"
+                  class="number-btn-dice2 success2"
+                  data-action="decrease"
+                >
+                <img id="down-c-icon" src="./Assets/img/icons/circle-down.png" alt="down" />
+                </button>
+                <span id="current-number-dice2">1</span>
+                <button
+                  id="plus-dice2"
+                  class="number-btn-dice2 success2"
+                  data-action="increase"
+                >
+                <img id="up-c-icon" src="./Assets/img/icons/circle-up.png" alt="up" />
+                </button>
+              </div>
+              <label>Dice 2 :</label>
+              <p class="numberselectionerror2 error"></p>
+            </div>
+
+            <div class="dice3selection">
+              <label>Select (1 to 6):</label>
+              <div id="number-dice3" class="button-group">
+                <button
+                  id="minus-dice3"
+                  class="number-btn-dice3 success2"
+                  data-action="decrease"
+                >
+                <img id="down-c-icon" src="./Assets/img/icons/circle-down.png" alt="down" />
+                </button>
+                <span id="current-number-dice3">1</span>
+                <button
+                  id="plus-dice3"
+                  class="number-btn-dice3 success2"
+                  data-action="increase"
+                >
+                <img id="up-c-icon" src="./Assets/img/icons/circle-up.png" alt="up" />
+                </button>
+              </div>
+              <label>Dice 3 :</label>
+              <p class="numberselectionerror3 error"></p>
+            </div>
+          </div>
+
+          <p class="numberselectionerror error"></p>
+
+          <div class="row"> 
+            <div class="input-button-wrapper">
+             <label for="amount">Bet Amount:</label>
+              <input type="number" id="amount" placeholder="Enter bet amount" />
+              <button id="placeBet">Place Bet</button>
+            </div>
+            <p class="inputerror error"></p>
+          </div>
         </div>
-        
+        <div class="result-table result-table2">
+          <div class="rowtable">
+            <div class="cell heading">Selected</div>
+            <div class="cell heading">Result</div>
+            <div class="cell heading">Won</div>
+            <div class="cell heading">Amount Won</div>
+          </div>
+          <div class="rowtable">
+            <div class="cell userselectionnumbers"></div>
+            <div class="cell result"></div>
+            <div class="cell matcheswon"></div>
+            <div class="cell kshwon"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./js/index.js"></script>
-</body>
+  </body>
 </html>
